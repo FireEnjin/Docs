@@ -1,6 +1,6 @@
 {
   "name": "@fireenjin/docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A documentation and testing tool",
   "license": "MIT",
   "main": "./dist/index.cjs.js",
