@@ -1,9 +1,6 @@
-# fireenjin-designer-gallery
-
-
+# fireenjin-docs-gallery
 
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -14,7 +11,6 @@
 | `ionicDocsFilePath` | `ionic-docs-file-path` |             | `string`  | `undefined`        |
 | `useHash`           | `use-hash`             |             | `boolean` | `false`            |
 
-
 ## Dependencies
 
 ### Depends on
@@ -24,6 +20,7 @@
 - stencil-route
 
 ### Graph
+
 ```mermaid
 graph TD;
   fireenjin-docs-gallery --> fireenjin-docs-sidebar
@@ -33,6 +30,6 @@ graph TD;
   style fireenjin-docs-gallery fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
