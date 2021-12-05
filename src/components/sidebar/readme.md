@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property     | Attribute    | Description | Type      | Default     |
@@ -10,18 +11,18 @@
 | `host`       | `host`       |             | `string`  | `undefined` |
 | `useHash`    | `use-hash`   |             | `boolean` | `false`     |
 
+
 ## Dependencies
 
 ### Used by
 
-- [fireenjin-docs-gallery](../gallery)
+ - [fireenjin-docs-gallery](../gallery)
 
 ### Depends on
 
 - [fireenjin-docs-sidebar-component](../sidebar-component)
 
 ### Graph
-
 ```mermaid
 graph TD;
   fireenjin-docs-sidebar --> fireenjin-docs-sidebar-component
@@ -29,6 +30,6 @@ graph TD;
   style fireenjin-docs-sidebar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
