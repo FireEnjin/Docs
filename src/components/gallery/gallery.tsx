@@ -1,6 +1,6 @@
 import '@stencil/router';
 import { Component, Element, State, h, Prop, ComponentInterface } from "@stencil/core";
-import marked from 'marked';
+import { marked } from 'marked';
 
 @Component({
   tag: "fireenjin-docs-gallery",
