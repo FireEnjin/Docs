@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@stencil/router": "^1.0.1",
-    "marked": "^3.0.7"
+    "marked": "^4.0.12"
   },
   "repository": {
     "type": "git",
