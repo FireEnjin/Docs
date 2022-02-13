@@ -7,21 +7,21 @@
 
 ## Properties
 
-| Property    | Attribute | Description | Type                | Default     |
-| ----------- | --------- | ----------- | ------------------- | ----------- |
-| `component` | --        |             | `OrganismComponent` | `undefined` |
-| `match`     | --        |             | `MatchResults`      | `undefined` |
+| Property    | Attribute   | Description | Type           | Default     |
+| ----------- | ----------- | ----------- | -------------- | ----------- |
+| `component` | `component` |             | `any`          | `undefined` |
+| `match`     | --          |             | `MatchResults` | `undefined` |
 
 
 ## Methods
 
-### `setPreset(presetName?: string) => Promise<OrganismPreset>`
+### `setPreset(presetName?: string) => Promise<any>`
 
 
 
 #### Returns
 
-Type: `Promise<OrganismPreset>`
+Type: `Promise<any>`
 
 
 

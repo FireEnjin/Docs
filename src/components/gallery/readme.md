@@ -5,12 +5,15 @@
 
 ## Properties
 
-| Property            | Attribute              | Description | Type      | Default            |
-| ------------------- | ---------------------- | ----------- | --------- | ------------------ |
-| `heading`           | `heading`              |             | `string`  | `"FireEnjin Docs"` |
-| `host`              | `host`                 |             | `string`  | `undefined`        |
-| `ionicDocsFilePath` | `ionic-docs-file-path` |             | `string`  | `undefined`        |
-| `useHash`           | `use-hash`             |             | `boolean` | `false`            |
+| Property            | Attribute              | Description | Type                       | Default            |
+| ------------------- | ---------------------- | ----------- | -------------------------- | ------------------ |
+| `components`        | --                     |             | `ComponentPresetOptions[]` | `[]`               |
+| `endpoints`         | --                     |             | `EndpointPresetOptions[]`  | `[]`               |
+| `heading`           | `heading`              |             | `string`                   | `'FireEnjin Docs'` |
+| `host`              | `host`                 |             | `string`                   | `undefined`        |
+| `ionicDocsFilePath` | `ionic-docs-file-path` |             | `string`                   | `undefined`        |
+| `models`            | --                     |             | `ModelPresetOptions[]`     | `[]`               |
+| `useHash`           | `use-hash`             |             | `boolean`                  | `false`            |
 
 
 ## Dependencies
@@ -28,6 +31,8 @@ graph TD;
   fireenjin-docs-gallery --> stencil-router
   fireenjin-docs-gallery --> stencil-route
   fireenjin-docs-sidebar --> fireenjin-docs-sidebar-component
+  fireenjin-docs-sidebar --> fireenjin-docs-sidebar-endpoint
+  fireenjin-docs-sidebar --> fireenjin-docs-sidebar-model
   style fireenjin-docs-gallery fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

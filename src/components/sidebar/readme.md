@@ -5,11 +5,13 @@
 
 ## Properties
 
-| Property     | Attribute    | Description | Type      | Default     |
-| ------------ | ------------ | ----------- | --------- | ----------- |
-| `components` | `components` |             | `any`     | `[]`        |
-| `host`       | `host`       |             | `string`  | `undefined` |
-| `useHash`    | `use-hash`   |             | `boolean` | `false`     |
+| Property     | Attribute  | Description | Type                       | Default     |
+| ------------ | ---------- | ----------- | -------------------------- | ----------- |
+| `components` | --         |             | `ComponentPresetOptions[]` | `[]`        |
+| `endpoints`  | --         |             | `EndpointPresetOptions[]`  | `[]`        |
+| `host`       | `host`     |             | `string`                   | `undefined` |
+| `models`     | --         |             | `ModelPresetOptions[]`     | `[]`        |
+| `useHash`    | `use-hash` |             | `boolean`                  | `false`     |
 
 
 ## Dependencies
@@ -21,11 +23,15 @@
 ### Depends on
 
 - [fireenjin-docs-sidebar-component](../sidebar-component)
+- [fireenjin-docs-sidebar-endpoint](../sidebar-endpoint)
+- [fireenjin-docs-sidebar-model](../sidebar-model)
 
 ### Graph
 ```mermaid
 graph TD;
   fireenjin-docs-sidebar --> fireenjin-docs-sidebar-component
+  fireenjin-docs-sidebar --> fireenjin-docs-sidebar-endpoint
+  fireenjin-docs-sidebar --> fireenjin-docs-sidebar-model
   fireenjin-docs-gallery --> fireenjin-docs-sidebar
   style fireenjin-docs-sidebar fill:#f9f,stroke:#333,stroke-width:4px
 ```

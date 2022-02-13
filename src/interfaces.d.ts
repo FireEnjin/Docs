@@ -1,12 +1,13 @@
 export interface ComponentPresetOptions {
   group?: string;
+  url?: string;
   docs: string;
   docsTags: any[];
   encapsulation: string;
   events: any[];
   methods: any[];
   presets?: {
-    [presetName: string]: ComponentPresetOptions;
+    [presetName: string]: ComponentPreset;
   };
   props: {
     attr: string;
@@ -50,7 +51,11 @@ export interface ComponentPresets {
 export interface EndpointPresetOptions {
   group?: string;
   name?: string;
+  url?: string;
   description?: string;
+  presets?: {
+    [presetName: string]: EndpointPreset;
+  };
   args?: {
     name?: string;
     description?: string;
@@ -95,8 +100,12 @@ export interface EndpointPresets {
 
 export interface ModelPresetOptions {
   group?: string;
+  url?: string;
   name?: string;
   description?: string;
+  presets?: {
+    [presetName: string]: ModelPreset;
+  };
   args?: {
     name?: string;
     description?: string;
