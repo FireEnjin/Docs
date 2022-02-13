@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component, Element, State, h, Prop, ComponentInterface } from '@stencil/core';
+import { Component, Element, State, h, Prop, ComponentInterface, Method } from '@stencil/core';
 import { marked } from 'marked';
 import { ComponentPresetOptions, EndpointPresetOptions, ModelPresetOptions } from '../../interfaces';
 
@@ -23,6 +23,20 @@ export class Gallery implements ComponentInterface {
   @State() currentDoc: string;
   @State() menuOpen = false;
   @State() docsOpen = false;
+
+  @Method()
+  async getPresets() {
+    try {
+      const response = await fetch(this.ionicDocsFilePath ? this.ionicDocsFilePath : `${this.host ? this.host : ''}/core.json`);
+      this.docs = await response.json();
+    } catch (error) {
+      console.log('Error getting docs for components.');
+    }
+    this.components = this.docs && this.docs.components && this.docs.components ? this.docs.components : [];
+    await this.getComponentPresets();
+    await this.getEndpointPresets();
+    await this.getModelPresets();
+  }
 
   toggleSidebar(event) {
     if (event) {
@@ -48,7 +62,7 @@ export class Gallery implements ComponentInterface {
 
   async getComponentPresets() {
     for (const [index, component] of this.components.entries()) {
-      this.components[index].url = `${this.host ? this.host : ''}/organism/${component.tag}/:preset?`;
+      this.components[index].url = `${this.host ? this.host : ''}/component/${component.tag}/:preset?`;
       const componentName = component.tag.replace(component.tag.split('-')[0] + '-', '');
       this.components[index].presets = (window as any).presets && (window as any)?.presets[`${componentName}.presets`] ? (window as any).presets[`${componentName}.presets`] : {};
     }
@@ -56,15 +70,28 @@ export class Gallery implements ComponentInterface {
     this.components = [...this.components];
   }
 
-  async componentDidLoad() {
-    try {
-      const response = await fetch(this.ionicDocsFilePath ? this.ionicDocsFilePath : `${this.host ? this.host : ''}/core.json`);
-      this.docs = await response.json();
-    } catch (error) {
-      console.log('Error getting docs for components.');
+  async getEndpointPresets() {
+    for (const [index, endpoint] of this.endpoints.entries()) {
+      this.endpoints[index].url = `${this.host ? this.host : ''}/endpoint/${endpoint.name}/:preset?`;
+      const endpointName = endpoint.name.replace(endpoint.name.split('-')[0] + '-', '');
+      this.endpoints[index].presets = (window as any).presets && (window as any)?.presets[`${endpointName}.presets`] ? (window as any).presets[`${endpointName}.presets`] : {};
     }
-    this.components = this.docs && this.docs.components && this.docs.components ? this.docs.components : [];
-    await this.getComponentPresets();
+
+    this.endpoints = [...this.endpoints];
+  }
+
+  async getModelPresets() {
+    for (const [index, model] of this.models.entries()) {
+      this.models[index].url = `${this.host ? this.host : ''}/model/${model.name}/:preset?`;
+      const modelName = model.name.replace(model.name.split('-')[0] + '-', '');
+      this.models[index].presets = (window as any).presets && (window as any)?.presets[`${modelName}.presets`] ? (window as any).presets[`${modelName}.presets`] : {};
+    }
+
+    this.models = [...this.models];
+  }
+
+  componentDidLoad() {
+    this.getPresets();
   }
 
   render() {

@@ -16,6 +16,19 @@
 | `useHash`           | `use-hash`             |             | `boolean`                  | `false`            |
 
 
+## Methods
+
+### `getPresets() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Dependencies
 
 ### Depends on
