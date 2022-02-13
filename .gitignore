@@ -2,6 +2,7 @@ dist/
 www/
 loader/
 build/
+.history/
 src/components.d.ts
 *~
 *.sw[mnpcod]
