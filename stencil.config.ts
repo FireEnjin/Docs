@@ -19,5 +19,4 @@ export const config: Config = {
     },
   ],
   preamble: '(C) Madness Labs https://MadnessLabs.net - MIT License',
-  globalScript: './src/global.ts',
 };

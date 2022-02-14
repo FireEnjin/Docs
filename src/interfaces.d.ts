@@ -1,3 +1,5 @@
+export * from './components.d';
+
 export interface ComponentPresetOptions {
   group?: string;
   url?: string;

@@ -7,7 +7,7 @@
   "module": "./dist/index.js",
   "es2015": "./dist/esm/index.mjs",
   "es2017": "./dist/esm/index.mjs",
-  "types": "./dist/types/components.d.ts",
+  "types": "./dist/types/interfaces.d.ts",
   "unpkg": "./dist/fireenjin-docs/fireenjin-docs.esm.js",
   "collection:main": "./dist/collection/index.js",
   "collection": "./dist/collection/collection-manifest.json",
