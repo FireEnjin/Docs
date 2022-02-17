@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component, Element, State, h, Prop, ComponentInterface, Method } from '@stencil/core';
+import { Component, Element, State, h, Prop, ComponentInterface, Method, Build } from '@stencil/core';
 import { marked } from 'marked';
 import { ComponentPresetOptions, EndpointPresetOptions, ModelPresetOptions } from '../../interfaces';
 
@@ -91,6 +91,7 @@ export class Gallery implements ComponentInterface {
   }
 
   componentDidLoad() {
+    if (!Build?.isBrowser) return;
     this.getPresets();
   }
 

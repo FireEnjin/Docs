@@ -1,4 +1,4 @@
-import { Component, Prop, State, h, Element, Method } from '@stencil/core';
+import { Component, Prop, State, h, Element, Method, Build } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
 @Component({
@@ -56,6 +56,8 @@ export class Organism {
   }
 
   componentWillLoad() {
+    if (!Build?.isBrowser) return;
+
     if (this.match && this.match.params && this.match.params.preset) {
       this.setPreset(this.match.params.preset);
     }
@@ -70,6 +72,8 @@ export class Organism {
   }
 
   componentDidLoad() {
+    if (!Build?.isBrowser) return;
+
     if (typeof this.currentPreset?.hooks?.onComponentDidLoad === 'function')
       this.currentPreset.hooks.onComponentDidLoad({
         organismEl: this.organismEl,
